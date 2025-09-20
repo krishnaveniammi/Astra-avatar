@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Astra Interface</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="https://cdn.babylonjs.com/babylon.js"></script>
+  <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+</head>
+<body>
+  <div class="main-container">
+    <!-- Left side avatar (always visible) -->
+    <div class="avatar-container">
+      <canvas id="renderCanvas"></canvas>
+    </div>
+
+    <!-- Right side landing panel -->
+    <div id="landingPanel" class="right-panel">
+      <h1 class="astra-title">ASTRA</h1>
+      <p class="astra-subtitle">✨ Your Star of Guidance ✨</p>
+      <button id="startBtn" class="start-btn">Get Started</button>
+    </div>
+
+    <!-- Right side chat panel (hidden initially) -->
+    <div id="chatPanel" class="right-panel hidden">
+      <header>
+        <h1>Hello!</h1>
+        <p>What are your thoughts?</p>
+      </header>
+      <!-- Place responseBox here -->
+      <div id="responseBox" class="scroll-box"></div>
+      <section class="input-section">
+        <textarea id="userInput" placeholder="Type your message here..." rows="5"></textarea>
+        <div class="controls">
+          <button id="sendButton">Send</button>
+        </div>
+      </section>
+      
+    </div>
+  </div>
+
+  <script src="/static/avatarLanding.js"></script>
+  <script src="/static/avatarChat.js"></script>
+  <script src="/static/script.js"></script>
+
+  <script>
+    // toggle landing -> chat
+    document.getElementById("startBtn").addEventListener("click", () => {
+      document.getElementById("landingPanel").classList.add("hidden");
+      document.getElementById("chatPanel").classList.remove("hidden");
+    });
+  </script>
+</body>
+</html>
